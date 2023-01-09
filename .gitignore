@@ -1,3 +1,4 @@
 /env
-/app/__pycache__
-/weapons/__pycache__
+/app/app/__pycache__
+/app/weapons/__pycache__
+/app/weapons/migrations/__pycache__
