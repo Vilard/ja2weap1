@@ -1,0 +1,31 @@
+.sidebar {
+    display: grid;
+    position: fixed;
+    width: 350px;
+    height: calc(100vh - 277.17px);
+    top: 247.170px;
+    /* left: -9999px; */
+    left:30px;
+    padding: 10px;
+    z-index: 1000;
+    background: yellowgreen;
+    user-select: none;
+    overflow-y: scroll;
+}
+.el {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
+input {
+    width: 45px;
+    position: static;
+    right: 0;
+    background:lightblue;
+}
+
+input::placeholder {
+    text-align: center;
+}

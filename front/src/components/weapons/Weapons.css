@@ -1,0 +1,52 @@
+table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table>tbody>tr>th {
+    background: rgb(175, 223, 85);
+    position: sticky;
+    top: 0;
+    padding: 10px;
+}
+table>tbody>tr:first-child { 
+    background: rgb(175, 223, 85);
+
+}
+
+td:nth-child(2) {
+    min-width: 200px;
+}
+
+th {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    text-align: center;
+    vertical-align: middle;
+}
+
+td {
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px 15px;
+}
+tr:hover {
+    background: lightblue;
+}
+.service {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 5px;
+    left: 10px;
+    /* background-color: red; */
+    z-index: 1000;
+    vertical-align: middle;
+    justify-content: center;
+    margin: 5px;
+}
+.service > div {
+    margin: 5px;
+
+}
