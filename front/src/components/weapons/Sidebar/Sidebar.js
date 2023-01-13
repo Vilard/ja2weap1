@@ -1,52 +1,8 @@
 import React from "react";
-// import axios from "axios";
-// import { useEffect, useState} from "react";
-// import { useQuery } from 'react-query'
-// import { useForm } from 'react-hook-form'
 import './Sidebar.css'
 
-// let test = {
-//     uiIndex: '',
-//     szWeaponName: '',
-//     ubCalibre: '5',
-//     ubWeaponType: 8,
-//     range_min: 120,
-//     range_max: '',
-//     ready_time_min: '',
-//     ready_time_max: '',
-//     shotper4turns_min: '',
-//     shotper4turns_max: '',
-//     ubShotsPerBurst_min: '',
-//     ubShotsPerBurst_max: '',
-//     ubBurstPenalty_min: '',
-//     ubBurstPenalty_max: '',
-//     ubImpact_min: '',
-//     ubImpact_max: '',
-//     ubAttackVolume_min: '',
-//     ubAttackVolume_max: '',
-//     ubMagSize_min: '3',
-//     ubMagSize_max: '',
-//     ubHitVolume_min: '',
-//     ubHitVolume_max: '',
-//     bBurstAP_min: '',
-//     bBurstAP_max: '',
-//     bAutofireShotsPerFiveAP_min: '',
-//     bAutofireShotsPerFiveAP_max: '',
-//     APsToReload_min: '',
-//     APsToReload_max: '50',
-//     APsToReloadManually_min: '0',
-//     APsToReloadManually_max: '0',
-//     nAccuracy_min: '',
-//     nAccuracy_max: '',
-//     ubAimLevels_min: '',
-//     ubAimLevels_max: '',
-//     Handling_min: '',
-//     Handling_max: '',
-//     ordering: 'Handling'
-// }
 
 export default function Sidebar({active, onChange, onBlur }) {
-    // const [formFields, setFormFields] = useState(test)
 
     const handleFormChange = (event) => {
         onChange([event.target.name, event.target.value])
@@ -56,12 +12,9 @@ export default function Sidebar({active, onChange, onBlur }) {
     const handleFormBlur = (event) => {
         onBlur(() => { })
     }
-    // console.log(`sidebar =`,  active)
     
-
     return (
         <form 
-            // style={{ backgroundColor: active ? 'red' : 'transparent' }}
             style={{ left: active ? '30px' : '-9999px' }}
             
             className="sidebar">

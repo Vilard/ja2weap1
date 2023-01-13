@@ -1,11 +1,10 @@
 import React, {
     useState,
     useEffect,
-    // useMemo 
+
 } from 'react'
 import axios from 'axios'
 import './Weapons.css'
-// import getWeapons from '../../get_weapons'
 import Sidebar from './Sidebar/Sidebar'
 
 
@@ -49,35 +48,36 @@ function Weaponlist() {
     const [active, setActive] = useState(false)
 
     const baseURL = `http://127.0.0.1:8000/api/weapons/`
-    // useEffect(() => {
-    // getWeapons(setWeapons, { formFields })
-    // console.log(weapons)
-    // function getWeapons(setWeapons, params = {} ) {
-    // axios.get(baseURL, { formFields }).then((response) => {
-    //     setWeapons(response.data);
-    //     console.log(formFields, toggle)
-    // return (response.data)
-    // })
-    // }
-    // }
-    // , [baseURL, formFields, toggle])
-    // console.log(setWeapons)
+    
     useEffect(() => {
         const params = formFields
         axios.get(baseURL, { params })
             .then((response) => {
                 setWeapons(response.data);
-                console.log(formFields, toggle)
-            }
-            )
-    }
-        , [
-            baseURL,
-            formFields,
-            toggle,
-            blur
-        ])
+            })
+    },[
+        baseURL,
+        formFields,
+        toggle,
+        blur
+    ])
+    
+    useEffect (() => {
+        window.addEventListener('keyup', esc)
+        
 
+        return () => {
+            window.removeEventListener('keyup', esc);
+        
+        }
+        
+    }, [active] )
+
+    function esc (e)  {
+        if (e.key === 'Escape') 
+            buttonMenu(e)
+    }
+    
     function hclick(e) {
         let name = e.target.innerHTML
         setToggle(!toggle)
@@ -85,7 +85,6 @@ function Weaponlist() {
             name = `-${name}`
         }
 
-        // console.log(toggle, name, 'sort')
         formFields['ordering'] = name
         setFormFields(formFields)
 
@@ -97,7 +96,6 @@ function Weaponlist() {
         const [key, value] = arr
         formFields[key] = value
         setFormFields(formFields)
-        // console.log(formFields)
     }
 
     const handleGetBlur = () => {
