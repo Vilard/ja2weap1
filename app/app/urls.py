@@ -2,9 +2,13 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from weapons.views import WeaponsModelViewSet
+from ammo.views import AmmoModelViewSet
+
 
 router = DefaultRouter()
 router.register('weapons', WeaponsModelViewSet)
+router.register('ammo', AmmoModelViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),

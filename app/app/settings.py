@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django_filters',
     'corsheaders',
     'weapons',
+    'ammo',
 ]
 
 MIDDLEWARE = [

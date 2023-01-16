@@ -1,56 +1,61 @@
 from rest_framework import serializers
+from rest_framework.relations import HyperlinkedRelatedField
 # from django_filters import FilterSet, AllValuesFilter, NumberFilter
 from .models import Weapons
-
-        
+from ammo.models import Ammo 
+from ammo.serializers import AmmoSerializer        
 
 class WeaponSerializer(serializers.HyperlinkedModelSerializer):
+    ubCalibre = serializers.SlugRelatedField(
+        read_only=True,
+        slug_field='BRCaliber'
+        )
 
     class Meta:
         model = Weapons
         fields = [
         "uiIndex", 
         "szWeaponName", 
-        # "ubWeaponClass", 
+        "ubWeaponClass", 
         "ubWeaponType",
-        "ubCalibre", 
+        "ubCalibre",
         "ubReadyTime", 
         "ubShotsPer4Turns", 
         "ubShotsPerBurst",
         "ubBurstPenalty", 
-        # "ubBulletSpeed", 
+        "ubBulletSpeed", 
         "ubImpact", 
-        # "ubDeadliness",
-        # "bAccuracy", 
+        "ubDeadliness",
+        "bAccuracy", 
         "ubMagSize", 
         "usRange", 
         "nAccuracy",
-        # "usReloadDelay", 
-        # "BurstAniDelay",
+        "usReloadDelay", 
+        "BurstAniDelay",
         "ubAttackVolume", 
         "ubHitVolume", 
-        # "sSound", 
-        # "sBurstSound",
-        # "sSilencedBurstSound", 
-        # "sReloadSound", 
-        # "sLocknLoadSound",
-        # "SilencedSound", 
+        "sSound", 
+        "sBurstSound",
+        "sSilencedBurstSound", 
+        "sReloadSound", 
+        "sLocknLoadSound",
+        "SilencedSound", 
         "bBurstAP", 
         "bAutofireShotsPerFiveAP", 
         "APsToReload",
-        # "SwapClips", 
-        # "MaxDistForMessyDeath", 
-        # "AutoPenalty", 
-        # "NoSemiAuto",
-        # "EasyUnjam", 
+        "SwapClips", 
+        "MaxDistForMessyDeath", 
+        "AutoPenalty", 
+        "NoSemiAuto",
+        "EasyUnjam", 
         "APsToReloadManually", 
-        # "ManualReloadSound", 
+        "ManualReloadSound", 
         "bRecoilX", 
         "bRecoilY", 
         "ubAimLevels", 
         "ubRecoilDelay", 
         "Handling",
-        # "usOverheatingJamThreshold", 
-        # "usOverheatingDamageThreshold",
-        # "usOverheatingSingleShotTemperature"
+        "usOverheatingJamThreshold", 
+        "usOverheatingDamageThreshold",
+        "usOverheatingSingleShotTemperature"
     ]
